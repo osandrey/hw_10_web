@@ -1,0 +1,10 @@
+.alert-error, .errorlist {
+    color: crimson;
+    background-image: url('./noteapp/static/noteapp/nature.png');
+}
+
+.alert-success {
+    color: green;
+}
+
+
