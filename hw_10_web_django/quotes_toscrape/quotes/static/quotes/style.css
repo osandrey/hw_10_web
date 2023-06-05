@@ -103,9 +103,7 @@ body {
   margin-bottom: 20px;
 }
 
-ul.pager {
-  margin-bottom: 100px;
-}
+
 
 .copyright {
   text-align: center;
@@ -157,6 +155,14 @@ ul.pager {
   background-color: #8C51F0;
 }
 
+ul.pager {
+  margin-bottom: 100px;
+  padding-left: 0;
+    margin: 22px 0;
+    list-style: none;
+    text-align: center;
+}
+
 .pager {
     font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -181,4 +187,8 @@ ul.pager {
     background-color: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 15px;
+}
+
+.disabled {
+    color: #333333;
 }
