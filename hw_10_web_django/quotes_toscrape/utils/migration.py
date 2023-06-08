@@ -22,7 +22,7 @@ for author in authors:
     born_location = author['born_location'],
     bio = author['bio'],
 
-    )
+)
 
 quotes = db.quote.find()
 

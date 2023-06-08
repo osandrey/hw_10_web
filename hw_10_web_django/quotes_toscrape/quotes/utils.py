@@ -1,11 +1,6 @@
 from pymongo import MongoClient
 
 
-# def get_mongo_db():
-#     uri = "mongodb+srv://osandreyman:1111@firstcluster.g6svumr.mongodb.net/hw?retryWrites=true&w=majority"
-#     connection = connect(db='hw', host=uri,  tlsCAFile=certifi.where(), ssl=True)
-#     return connection
-
 
 # def check_mongo_connection():
 #     uri = "mongodb+srv://osandreyman:1111@firstcluster.g6svumr.mongodb.net/hw?retryWrites=true&w=majority"
@@ -29,4 +24,6 @@ def get_mongo_db():
     client = MongoClient(uri)
     db = client.hw
     return db
+
+
 
