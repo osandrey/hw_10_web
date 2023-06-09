@@ -29,6 +29,12 @@ class QuoteModelForm(ModelForm):
     quote = CharField(widget=Textarea)
     tags = ModelMultipleChoiceField(queryset=Tag.objects.all().order_by("name"), required=True, widget=SelectMultiple)
     author = ModelChoiceField(queryset=Author.objects.all().order_by("fullname"), widget=Select())
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['author'].label_from_instance = lambda obj: obj.fullname
+        self.fields['tags'].label_from_instance = lambda obj: obj.name
+
     class Meta:
         model = Quote
         fields = [

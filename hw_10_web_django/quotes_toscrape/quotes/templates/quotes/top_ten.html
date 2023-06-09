@@ -1,0 +1,16 @@
+{% extends 'quotes/base.html' %}
+{% load extract %}
+
+{% block content %}
+
+
+
+{% for tag in top_tags %}
+
+<p> <span class="tag">{{ tag.name }}</span></p>
+
+{% endfor %}
+
+
+
+{% endblock %}

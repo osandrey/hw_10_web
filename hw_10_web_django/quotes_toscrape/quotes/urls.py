@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import main, about_author, view_tags, QuoteCreateView, AuthorCreateView, TagCreateView
+from .views import main, about_author, QuoteCreateView, AuthorCreateView, TagCreateView, TagView, top_tags_view
 
 
 app_name = "quotes"
@@ -11,5 +11,6 @@ urlpatterns = [
     path('create/', QuoteCreateView.as_view(), name='quote-create'),
     path('addauthor/', AuthorCreateView.as_view(), name='add-author'),
     path('addtag/', TagCreateView.as_view(), name='add-tag'),
-    path('tag/', view_tags, name='view_tags'),
+    path('tag/<str:id>', TagView.as_view(), name='TagView'),
+    path('top/', top_tags_view, name='top_tags_view')
 ]

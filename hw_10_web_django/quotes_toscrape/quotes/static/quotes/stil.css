@@ -5,6 +5,23 @@ body {
 
 }
 
+.quote-mybar {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  text-decoration: none;
+}
+
+.quote-mybar:hover {
+  background-color: #e0e0e0;
+}
+
 
 .quote {
   padding: 10px;
@@ -77,3 +94,4 @@ body {
     /*text-decoration: none;*/
     cursor: not-allowed;
 }
+
