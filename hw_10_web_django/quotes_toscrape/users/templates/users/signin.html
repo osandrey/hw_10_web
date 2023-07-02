@@ -8,6 +8,7 @@
 {% endif %}
 
 {% if messages %}
+
 {% for msg in messages %}
 <span class="alert {%if msg.tags %} alert-{{msg.tags}} {% endif %}" role="alert">{{msg}}</span>
 {% endfor %}
@@ -27,5 +28,8 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-info">Reset</button>
+    <div class="small text-center">
+        <a href="{% url 'users:password_reset' %}" class="text-center"><i>Forgot Password?</i></a>
+    </div>
 </form>
 {% endblock %}

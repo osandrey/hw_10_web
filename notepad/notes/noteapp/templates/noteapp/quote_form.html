@@ -1,0 +1,12 @@
+{% extends "noteapp/base.html" %}
+
+{% block content %}
+
+<form method="POST" action=".">{% csrf_token %}
+
+       {{ form.as_p }}
+        <button type="submit">Submit</button>
+        <button type="reset" class="secondary">Reset</button>
+
+</form>
+{% endblock %}

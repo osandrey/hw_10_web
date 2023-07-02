@@ -12,6 +12,7 @@
             <ul>
                 <li><a href="{% url 'noteapp:note' %}" role="button">Add note</a></li>
                 <li><a href="{% url 'noteapp:tag' %}" role="button">Add Tag</a></li>
+                <li><a href="{% url 'noteapp:quote' %}" role="button">Add Quote</a></li>
             </ul>
             <ul>
                 <li>Welcome <b>{{ user.username }}!</b></li>
@@ -25,7 +26,7 @@
             </ul>
         {% endif %}
     </nav>
-
+    {% if notes != None and notes != ''%}
     {% for note in notes %}
         <ul>
             <li>
@@ -39,6 +40,7 @@
             </li>
         </ul>
     {% endfor %}
+    {% endif %}
 </main>
 </body>
 </html>

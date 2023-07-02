@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import TagForm, NoteForm
-from .models import Tag, Note
+from .forms import TagForm, NoteForm, RawQuoteForm
+from .models import Tag, Note, Quote
 
 
 # Create your views here.
@@ -44,6 +44,27 @@ def note(request):
             return render(request, 'noteapp/note.html', {"tags": tags, 'form': form})
 
     return render(request, 'noteapp/note.html', {"tags": tags, 'form': NoteForm()})
+
+
+
+def quote(request):
+    initial_data = {'title': 'My brilliant title', 'description': 'Hello ase hole'}
+    my_form = RawQuoteForm(initial=initial_data)
+
+    if request.method == "POST":
+        my_form = RawQuoteForm(request.POST or None, initial=initial_data)
+
+        if my_form.is_valid():
+            print(my_form.cleaned_data)
+            Quote.objects.create(**my_form.cleaned_data)
+            my_form = RawQuoteForm()
+        else:
+            print(my_form.errors)
+
+    context = {
+        'form': my_form
+    }
+    return render(request, 'noteapp/quote_form.html', context)
 
 
 @login_required
